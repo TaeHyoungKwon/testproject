@@ -5,13 +5,13 @@ from config.common_datetime_model import CommonDateTime
 
 from cart.models import Cart
 
+User = settings.AUTH_USER_MODEL
+
 ORDER_STATUS = (
     ('created', '생성됨'),
     ('paid', '결제됨'),
     ('shipped', '발송됨'),
 )
-
-User = settings.AUTH_USER_MODEL
 
 
 class Order(CommonDateTime):
