@@ -27,3 +27,4 @@ class Menu(CommonDateTime):
     active = models.BooleanField(
         "활성화 상태"
     )
+    count = models.PositiveSmallIntegerField(default=1)
