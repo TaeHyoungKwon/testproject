@@ -41,7 +41,6 @@ INSTALLED_APPS = [
     'django_extensions',
     'menus',
     'order',
-    'account'
 ]
 
 MIDDLEWARE = [
@@ -59,7 +58,7 @@ ROOT_URLCONF = 'config.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -124,11 +123,13 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#AUTH_USER_MODEL = 'accounts.User'
 
-AUTH_USER_MODEL = 'auth.User'
+AUTH_UESR_MODEL = 'auth.User'
 
 GRAPH_MODELS = {
     'all_applications': True,
     'group_models': True,
 }
+
+
+LOGIN_REDIRECT_URL = '/cart/'
