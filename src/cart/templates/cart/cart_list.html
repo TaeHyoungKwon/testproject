@@ -13,12 +13,10 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script>
             $(document).ready(function(){
-              console.log("working");
               $.ajax({
                 url: "/api/cart/",
                 method: "GET",
                 success: function(data){
-                  console.log(data)
                   $.each(data.menu, function(key, value){
                       var menuKey = key;
                       var title = value.title;
@@ -29,15 +27,17 @@
                               "<br/>" +
                               price +
                               "<hr/>"+
-                              
                           "</div>"
-                          
                       )
                   })
+                  $("#tweet-container").append(
+                      "<div>" +
+                      "total: "+ data.total +
+                    "</div>"
+                  )
                 },
                 error: function(data){
                   console.log("error")
-                  console.log(data)
                 }
               })
              });
