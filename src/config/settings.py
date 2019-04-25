@@ -135,3 +135,6 @@ GRAPH_MODELS = {
 }
 
 LOGIN_REDIRECT_URL = '/cart/'
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

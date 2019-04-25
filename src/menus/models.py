@@ -17,10 +17,9 @@ class Menu(CommonDateTime):
     )
     image = models.ImageField(
         "메뉴 이미지",
-        upload_to=None,
+        upload_to="%Y/%m/%d",
         null=True,
         blank=True,
-        max_length=None
     )
     active = models.BooleanField(
         "활성화 상태"
