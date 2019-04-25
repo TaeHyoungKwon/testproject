@@ -122,7 +122,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
+STATIC_URL = '/static/'
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
 
 AUTH_UESR_MODEL = 'auth.User'
 
@@ -130,6 +133,5 @@ GRAPH_MODELS = {
     'all_applications': True,
     'group_models': True,
 }
-
 
 LOGIN_REDIRECT_URL = '/cart/'

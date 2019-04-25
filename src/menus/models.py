@@ -12,10 +12,8 @@ class Menu(CommonDateTime):
         "메뉴 설명",
         max_length=50
     )
-    price = models.DecimalField(
-        "가격",
-        max_digits=5,
-        decimal_places=2
+    price = models.PositiveSmallIntegerField(
+        "가격"
     )
     image = models.ImageField(
         "메뉴 이미지",
@@ -27,4 +25,6 @@ class Menu(CommonDateTime):
     active = models.BooleanField(
         "활성화 상태"
     )
-    count = models.PositiveSmallIntegerField(default=1)
+
+    def __str__(self):
+        return self.title + str(self.id)
